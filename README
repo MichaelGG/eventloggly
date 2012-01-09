@@ -1,0 +1,2 @@
+To configure as a service:
+sc create "Event Loggly" start= auto binPath= "C:\program files\eventloggly\eventloggly.exe"
