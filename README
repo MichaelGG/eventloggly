@@ -1,2 +1,6 @@
+Requires F# Runtime to be installed, as well as .NET 4.0.
+
+Configure by editing eventloggly.exe.config.
+
 To configure as a service:
 sc create "Event Loggly" start= auto binPath= "C:\program files\eventloggly\eventloggly.exe"
