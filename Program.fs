@@ -43,9 +43,7 @@ let logAgent = MailboxProcessor.Start (fun (mb: MailboxProcessor<EventLogEntry *
                 try 
                     use rs = req.GetRequestStream()
                     rs.Write(data, 0, data.Length)
-                    let! res = req.AsyncGetResponse()
-                    use rs = res.GetResponseStream()
-                    use sr = new IO.StreamReader(rs)
+                    use! res = req.AsyncGetResponse()
                     ()
                 with ex -> logException ex
             }
